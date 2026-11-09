@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "depth-estimation-claim-audit"
+version = "0.1.0"
+description = "Offline static audit of documented image depth-estimation claims against real Python evidence"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Hao Li" }]
+keywords = [
+    "audit",
+    "depth-estimation",
+    "documentation",
+    "static-analysis",
+    "computer-vision",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+depth-estimation-claim-audit = "depth_estimation_claim_audit.cli:main"
+
+[tool.setuptools]
+packages = ["depth_estimation_claim_audit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
